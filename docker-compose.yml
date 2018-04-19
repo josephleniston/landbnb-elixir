@@ -1,0 +1,25 @@
+version: '2'
+services:
+  phoenix:
+    build: .
+    image: landbnb-elixir
+    ports:
+      - "4000:4000"
+    volumes:
+      - .:/app
+    depends_on:
+      - database
+    environment:
+      MIX_ENV: dev
+      DATABASE_URL: postgresql://postgres:@landbnb-elixir-database/landbnb_elixir_development
+
+  database:
+    container_name: landbnb-elixir-database
+    image: postgres:9.5
+    volumes:
+      - postgresql-data:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_PASSWORD=secret
+      - POSTGRES_USER=phoenix
+volumes:
+  postgresql-data: {}
