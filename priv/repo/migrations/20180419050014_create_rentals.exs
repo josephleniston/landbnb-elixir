@@ -9,6 +9,7 @@ defmodule Landbnb.Repo.Migrations.CreateRentals do
       add :bedrooms, :integer
       add :beds, :integer
       add :nightly_cost, :decimal
+      add :description, :string
       add :latitude, :decimal
       add :longitude, :decimal
       add :street1, :string

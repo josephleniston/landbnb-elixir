@@ -54,7 +54,11 @@ WORKDIR /app
 
 RUN  echo "install dependencies"
 
-# RUN mix deps.get
+RUN mix deps.get
+
+# see https://github.com/riverrun/comeonin/wiki/Deployment
+RUN echo "Build bcrypt_elixir" \
+  && cd deps/bcrypt_elixir && make clean && make
 
 ENV PORT 4000
 

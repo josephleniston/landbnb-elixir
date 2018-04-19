@@ -13,6 +13,7 @@ defmodule Landbnb.Renting.Rental do
     field :latitude, :decimal
     field :longitude, :decimal
     field :nightly_cost, :decimal
+    field :description, :string
     field :postal_code, :string
     field :province, :string
     field :rental_type, :string
@@ -26,7 +27,7 @@ defmodule Landbnb.Renting.Rental do
   @doc false
   def changeset(rental, attrs) do
     rental
-    |> cast(attrs, [:user_id, :rental_type, :accommodates, :bathrooms, :bedrooms, :beds, :nightly_cost, :latitude, :longitude, :street1, :street2, :city, :province, :country, :postal_code])
-    |> validate_required([:user_id, :rental_type, :accommodates, :bathrooms, :bedrooms, :beds, :nightly_cost, :latitude, :longitude, :street1, :street2, :city, :province, :country, :postal_code])
+    |> cast(attrs, [:user_id, :rental_type, :accommodates, :bathrooms, :bedrooms, :beds, :nightly_cost, :description, :latitude, :longitude, :street1, :street2, :city, :province, :country, :postal_code])
+    |> validate_required([:user_id, :rental_type, :accommodates, :bathrooms, :bedrooms, :beds, :nightly_cost, :description, :latitude, :longitude, :street1, :street2, :city, :province, :country, :postal_code])
   end
 end

@@ -20,7 +20,7 @@ defmodule Landbnb.Mixfile do
   def application do
     [
       mod: {Landbnb, []},
-      extra_applications: [:logger]
+      extra_applications: [:logger, :faker]
     ]
   end
 
@@ -43,7 +43,11 @@ defmodule Landbnb.Mixfile do
       {:cowboy, "~> 1.0"},
       {:absinthe, "~> 1.4"},
       {:absinthe_plug, "~> 1.4"},
+      {:bcrypt_elixir, "~> 1.0"},
+      {:comeonin, "~> 4.0"},
+      {:faker, "~> 0.10"},
       {:poison, "~> 3.1"},
+      {:timex, "~> 3.1"}
     ]
   end
 
