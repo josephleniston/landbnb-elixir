@@ -11,7 +11,9 @@ services:
       - database
     environment:
       MIX_ENV: dev
-      DATABASE_URL: postgresql://postgres:@landbnb-elixir-database/landbnb_elixir_development
+      DATABASE_URL: postgresql://phoenix:secret@landbnb-elixir-database/landbnb_elixir_development
+    command:
+      mix phx.server
 
   database:
     container_name: landbnb-elixir-database

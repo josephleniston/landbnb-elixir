@@ -1,4 +1,4 @@
-defmodule Landbnb.Renting.User do
+defmodule Landbnb.Accounts.User do
   use Ecto.Schema
   import Ecto.Changeset
 

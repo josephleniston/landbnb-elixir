@@ -20,7 +20,14 @@ defmodule Landbnb.Router do
   end
 
   # Other scopes may use custom stacks.
-  # scope "/api", Landbnb do
-  #   pipe_through :api
-  # end
+  scope "/api" do
+    pipe_through :api
+
+    forward "/graphiql", Absinthe.Plug.GraphiQL,
+      schema: Landbnb.Schema,
+      interface: :simple
+
+    forward "/", Absinthe.Plug,
+      schema: Landbnb.Schema
+  end
 end

@@ -19,7 +19,7 @@ defmodule Landbnb.Renting.Rental do
     field :rental_type, :string
     field :street1, :string
     field :street2, :string
-    belongs_to :user, Landbnb.Renting.User
+    belongs_to :user, Landbnb.Accounts.User
 
     timestamps()
   end

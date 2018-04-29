@@ -12,7 +12,7 @@
 
 alias Landbnb.Renting.Booking
 alias Landbnb.Renting.Rental
-alias Landbnb.Renting.User
+alias Landbnb.Accounts.User
 alias Landbnb.Repo
 
 Repo.delete_all(Booking)

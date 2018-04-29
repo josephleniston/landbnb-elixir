@@ -10,7 +10,7 @@ defmodule Landbnb.Renting.Booking do
     field :reviewed_at, :utc_datetime
     field :start_date, :utc_datetime
     field :stop_date, :utc_datetime
-    belongs_to :user, Landbnb.Renting.User
+    belongs_to :user, Landbnb.Accounts.User
     belongs_to :rental, Landbnb.Renting.Rental
 
     timestamps()
